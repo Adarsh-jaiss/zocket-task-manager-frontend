@@ -17,7 +17,7 @@ export const API_ENDPOINTS = {
     get: (id: string) => `/v1/user/${id}`,
   },
   ws: {
-    connect: 'ws://https://zocket-task-manager-backend.onrender.com/api/v1/ws',
+    connect: 'wss://https://zocket-task-manager-backend.onrender.com/api/v1/ws',
   },
 };
 

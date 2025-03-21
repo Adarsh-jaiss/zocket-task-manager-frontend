@@ -11,7 +11,7 @@ class WebSocketService {
   connect(token: string) {
     if (this.socket?.connected) return;
 
-    const baseUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+    const baseUrl = "https://zocket-task-manager-backend.onrender.com/api";
 
     try {
       this.socket = io(baseUrl, {
