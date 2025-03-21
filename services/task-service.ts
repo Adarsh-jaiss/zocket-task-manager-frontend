@@ -51,7 +51,7 @@ export interface TaskAnalysis {
 
 class TaskService {
   private baseUrl =
-    process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api";
+    process.env.NEXT_PUBLIC_API_URL || "https://zocket-task-manager-backend.onrender.com/api";
 
   async listTasks(token: string): Promise<Task[]> {
     const response = await axios.get(`${this.baseUrl}/v1/tasks`, {
