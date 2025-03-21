@@ -1,4 +1,4 @@
-export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://zocket-task-manager-backend.onrender.com/api'  ||'http://localhost:8000/api';
+export const API_BASE_URL =  'https://zocket-task-manager-backend.onrender.com/api'
 
 export const API_ENDPOINTS = {
   auth: {
@@ -17,7 +17,7 @@ export const API_ENDPOINTS = {
     get: (id: string) => `/v1/user/${id}`,
   },
   ws: {
-    connect: 'ws://localhost:8000/api/v1/ws',
+    connect: 'ws://https://zocket-task-manager-backend.onrender.com/api/v1/ws',
   },
 };
 
