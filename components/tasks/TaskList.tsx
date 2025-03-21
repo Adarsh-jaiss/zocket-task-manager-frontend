@@ -377,7 +377,7 @@ export function TaskList() {
         return [...(oldTasks || []), newTask as Task];
       });
 
-      // Make the API call
+      // Make the API call with the proper assigned_to_name
       const createdTask = await taskService.createTask(token!, {
         title: newTask.title,
         description: newTask.description,
@@ -480,7 +480,8 @@ export function TaskList() {
   };
 
   // Generate profile image background color based on name
-  const getProfileColor = (name: string) => {
+  const getProfileColor = (name: string = "") => {
+    // Add default empty string parameter
     const colors = [
       "bg-blue-500",
       "bg-indigo-500",
@@ -493,8 +494,6 @@ export function TaskList() {
       "bg-teal-500",
       "bg-cyan-500",
     ];
-
-    // Simple hash function to get consistent color for same name
     const hash = name
       .split("")
       .reduce((acc, char) => acc + char.charCodeAt(0), 0);
