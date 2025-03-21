@@ -1,4 +1,5 @@
-export const API_BASE_URL =  'https://zocket-task-manager-backend.onrender.com/api'
+export const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://zocket-task-manager-backend.onrender.com/api'
+export const WS_BASE_URL = process.env.NEXT_PUBLIC_WS_BASE_URL || 'wss://zocket-task-manager-backend.onrender.com/api/v1/ws'
 
 export const API_ENDPOINTS = {
   auth: {
@@ -17,7 +18,7 @@ export const API_ENDPOINTS = {
     get: (id: string) => `/v1/user/${id}`,
   },
   ws: {
-    connect: 'wss://https://zocket-task-manager-backend.onrender.com/api/v1/ws',
+    connect: process.env.NEXT_PUBLIC_WS_URL || 'wss://zocket-task-manager-backend.onrender.com/api/v1/ws',
   },
 };
 
